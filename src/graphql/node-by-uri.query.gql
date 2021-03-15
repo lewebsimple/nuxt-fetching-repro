@@ -1,0 +1,17 @@
+query NodeByUri($uri: String!) {
+  nodeByUri(uri: $uri) {
+    ... on Category {
+      __typename
+      categoryId
+      name
+    }
+    ... on Post {
+      __typename
+      title(format: RENDERED)
+    }
+    ... on Page {
+      __typename
+      title(format: RENDERED)
+    }
+  }
+}

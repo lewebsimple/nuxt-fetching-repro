@@ -1,0 +1,9 @@
+query PostsByCategoryId($categoryId: Int!) {
+  posts(where: { categoryId: $categoryId }) {
+    nodes {
+      id
+      uri
+      title(format: RENDERED)
+    }
+  }
+}
